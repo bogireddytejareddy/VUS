@@ -31,7 +31,7 @@ To ease reproducibility, we share our results over [TSB-UAD](http://chaos.cs.uch
 
 ```
 $ conda env create --file environment.yml
-$ conda activate VUS
+$ conda activate VUS-env
 $ pip install -r requirements.txt
 ```
 
