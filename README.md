@@ -30,6 +30,8 @@ To ease reproducibility, we share our results over [TSB-UAD](http://chaos.cs.uch
 ### Install Dependencies
 
 ```
+$ conda env create --file environment.yml
+$ conda activate VUS
 $ pip install -r requirements.txt
 ```
 
