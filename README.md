@@ -71,13 +71,6 @@ def anomaly_results(X_data):
     MP_clf.fit(x)
     MP_score = MP_clf.decision_scores_
 
-    #POLY
-    from src.models.poly import POLY
-    POLY_clf = POLY(power=3, window = slidingWindow)
-    x = X_data
-    POLY_clf.fit(x)
-    POLY_score = POLY_clf.decision_scores_
-
     X_data = Window(window = slidingWindow).convert(X_data).to_numpy()
 
     # PCA
@@ -101,7 +94,7 @@ def anomaly_results(X_data):
     IF_clf.fit(x)
     IF_score = IF_clf.decision_scores_
 
-    return MP_score, POLY_score, PCA_score, LOF_score, IF_score
+    return MP_score, PCA_score, LOF_score, IF_score
 
 
 def scoring(score):
@@ -126,7 +119,7 @@ data = np.random.rand(5000)
 labels = np.random.randint(2, size=5000)
 
 names = ['Matrix Profile', 'PCA', 'LOF', 'IF']
-mp_score, poly_score, pca_score, lof_score, if_score = anomaly_results(data)
+mp_score, pca_score, lof_score, if_score = anomaly_results(data)
 for model_name, model_score in zip(names, [mp_score, pca_score, lof_score, if_score]):
     print(model_name + ':')
     scoring(model_score)
