@@ -51,7 +51,7 @@ $ python setup.py install
 
 ## Usage
 
-```
+```python
 import os
 import sys
 import math
