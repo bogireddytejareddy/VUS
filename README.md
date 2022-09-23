@@ -27,7 +27,7 @@ To ease reproducibility, we share our results over [TSB-UAD](http://chaos.cs.uch
 
 ## Installation
 
-### Install Dependencies
+### Create Environment and Install Dependencies
 
 ```
 $ conda env create --file environment.yml
