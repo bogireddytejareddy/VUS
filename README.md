@@ -64,6 +64,7 @@ $ python setup.py install
 |CNN|	4.888253|	4.963668|	4.993608|	4.156825|	5.087105|	4.904176|	4.326666|	5.230872|	5.420312|	5.799231|	5.464937|	5.742226|	5.439456|
 
 
+
 ## Usage
 
 ```python
@@ -105,10 +106,8 @@ data = np.random.rand(5000)
 labels = np.random.randint(2, size=5000)
 X_data = Window(window = slidingWindow).convert(data).to_numpy()
 
-names = ['Isolation Forest']
 if_score = anomaly_results(X_data)
 for model_name, model_score in zip(names, [if_score]):
-    print(model_name + ':')
-    scoring(model_score)
+    print('Isolation Forest :', scoring(model_score))
 ```
 
