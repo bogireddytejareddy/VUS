@@ -59,7 +59,6 @@ from sklearn.preprocessing import MinMaxScaler
 from src.analysis.robustness_eval import generate_curve
 
 
-
 def anomaly_results(X_data):
     # Isolation Forest
     from src.models.iforest import IForest
@@ -75,7 +74,6 @@ def scoring(score):
     # Score normalization
     score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
     score = np.array([score[0]]*np.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
-
 
     # Computing RANGE_AUC_ROC and RANGE_AUC_PR
     grader = metricor()
