@@ -51,6 +51,8 @@ $ python setup.py install
 
 ## Experiments
 
+### Full Accuracy Evalution:
+
 |	|Precision@k|	Recall|	Precision|	Rrecall|	Rprecision|	F|	RF|	AUC_PR|	AUC_ROC|	R_AUC_PR|	R_AUC_ROC|	VUS_PR|	VUS_ROC|
 |:--|:---------:|:-------:|:--------:|:-------:|:-----------:|:---:|:----:|:----:|:----:|:-----:|:----:|:----:|:----:|
 |NormA|	4.210485|	4.249889|	4.787366|	4.559922|	4.463738|	4.425060|	4.650611|	4.253773|	4.103623|	4.298602|	4.379906|	4.293008|	4.300858|
@@ -63,7 +65,17 @@ $ python setup.py install
 |LSTM|	5.089040|	5.163219|	5.363024|	4.345831|	5.339533|	5.122215|	4.496773|	5.705758|	6.162379|	6.581456|	6.348949|	6.559446|	6.288700|
 |CNN|	4.888253|	4.963668|	4.993608|	4.156825|	5.087105|	4.904176|	4.326666|	5.230872|	5.420312|	5.799231|	5.464937|	5.742226|	5.439456|
 
+### Robustness to Lag:
 
+<p align="center">
+<img width="500" src="https://raw.githubusercontent.com/bogireddytejareddy/VUS/patch-1/docs/lag.png"/>
+</p>
+
+### Robustness to Lag:
+
+<p align="center">
+<img width="500" height="550" src="https://github.com/bogireddytejareddy/VUS/blob/patch-1/docs/separability_analysis.png"/>
+</p>
 
 ## Usage
 
