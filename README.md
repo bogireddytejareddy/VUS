@@ -71,7 +71,7 @@ $ python setup.py install
 <img width="500" src="https://raw.githubusercontent.com/bogireddytejareddy/VUS/patch-1/docs/lag.png"/>
 </p>
 
-### Robustness to Lag:
+### Separability Analysis:
 
 <p align="center">
 <img width="500" height="550" src="https://github.com/bogireddytejareddy/VUS/blob/patch-1/docs/separability_analysis.png"/>
