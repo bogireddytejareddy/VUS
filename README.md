@@ -65,13 +65,13 @@ $ python setup.py install
 |LSTM| 5.705758|	6.162379|	6.581456|	6.348949|	6.559446|	6.288700|	5.089040|	5.163219|	5.363024|	4.345831|	5.339533|	5.122215|	4.496773|
 |CNN| 5.230872|	5.420312|	5.799231|	5.464937|	5.742226|	5.439456|	4.888253|	4.963668|	4.993608|	4.156825|	5.087105|	4.904176|	4.326666|
 
-### Robustness to Lag:
+### Robustness to Lag: : For each method, we compute the accuracy measures 10 times with random lag ℓ ∈ [−0.25 ∗ ℓ, 0.25 ∗ ℓ ] injected in the anomaly score. We center the accuracy average to 0.
 
 <p align="center">
 <img width="500" src="https://raw.githubusercontent.com/bogireddytejareddy/VUS/patch-1/docs/lag.png"/>
 </p>
 
-### Separability Analysis:
+### Separability Analysis: : Applied on 8 pairs of accurate (in green) and inaccurate (in red) methods on MBA(805) data.
 
 <p align="center">
 <img width="500" height="550" src="https://github.com/bogireddytejareddy/VUS/blob/patch-1/docs/separability_analysis.png"/>
