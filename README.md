@@ -15,11 +15,30 @@ and Michael J. Franklin. TSB-UAD: An End-to-End Benchmark Suite for
 Univariate Time-Series Anomaly Detection. PVLDB, 15(8): 1697 - 1711, 2022.
 doi:10.14778/3529337.3529354
 
+```
+@article{paparrizos2022tsb,
+  title={TSB-UAD: an end-to-end benchmark suite for univariate time-series anomaly detection},
+  author={Paparrizos, John and Kang, Yuhao and Boniol, Paul and Tsay, Ruey S and Palpanas, Themis and Franklin, Michael J},
+  journal={Proceedings of the VLDB Endowment},
+  volume={15},
+  number={8},
+  pages={1697--1711},
+  year={2022},
+  publisher={VLDB Endowment}
+}
+```
 
-> John Paparrizos, Paul Boniol, Themis Palpanas, Aaron Elmore,
-and Michael J. Franklin. Volume Under the Surface: new accuracy measures for abnormal subsequences detection in time series. PVLDB, 15(X): X - X, 2022.
+> John Paparrizos, Paul Boniol, Themis Palpanas, Aaron Elmore, and Michael J. Franklin. Volume Under the Surface: new accuracy measures for abnormal subsequences detection in time series. PVLDB, 15(X): X - X, 2022.
 doi:X.X/X.X
 
+```
+@article{paparrizos2022volume,
+  title={Volume Under the Surface: A New Accuracy Evaluation Measure for Time-Series Anomaly Detection},
+  author={Paparrizos, John and Boniol, Paul and Palpanas, Themis and Tsay, Ruey S and Elmore, Aaron and Franklin, Michael J},
+  journal={Technical Report LIPADE-TR-N7, Universit{\'e} Paris Cit{\'e}},
+  year={2022}
+}
+```
 
 ## Data
 
