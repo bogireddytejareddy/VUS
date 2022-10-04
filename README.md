@@ -99,7 +99,9 @@ $ python setup.py install
 ## Usage
 
 ```python
+import math
 import numpy as np
+import pandas as pd
 from src.models.feature import Window
 from src.utils.metrics import metricor
 from sklearn.preprocessing import MinMaxScaler
@@ -117,10 +119,10 @@ def anomaly_results(X_data):
     return IF_score
 
 
-def scoring(score):
+def scoring(score, labels, slidingWindow):
     # Score normalization
     score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
-    score = np.array([score[0]]*np.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
+    score = np.array([score[0]]*math.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
 
     # Computing RANGE_AUC_ROC and RANGE_AUC_PR
     grader = metricor()
@@ -133,12 +135,13 @@ def scoring(score):
 
 # Data Preprocessing
 slidingWindow = 100 # user-defined subsequence length
-data = np.random.rand(5000)
-labels = np.random.randint(2, size=5000)
+dataset = pd.read_csv('./data/MBA_ECG805_data.out', header=None).to_numpy()
+data = dataset[:, 0]
+labels = dataset[:, 1]
 X_data = Window(window = slidingWindow).convert(data).to_numpy()
 
 if_score = anomaly_results(X_data)
-for model_name, model_score in zip(names, [if_score]):
-    print('Isolation Forest :', scoring(model_score))
+print('Isolation Forest :')
+scoring(if_score, labels, slidingWindow)
 ```
 
