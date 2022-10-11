@@ -102,15 +102,14 @@ $ python setup.py install
 import math
 import numpy as np
 import pandas as pd
-from src.models.feature import Window
-from src.utils.metrics import metricor
+from vus.models.feature import Window
+from vus.metrics import get_range_vus_roc
 from sklearn.preprocessing import MinMaxScaler
-from src.analysis.robustness_eval import generate_curve
 
 
 def anomaly_results(X_data):
     # Isolation Forest
-    from src.models.iforest import IForest
+    from vus.models.iforest import IForest
     IF_clf = IForest(n_jobs=1)
     x = X_data
     IF_clf.fit(x)
@@ -124,13 +123,10 @@ def scoring(score, labels, slidingWindow):
     score = MinMaxScaler(feature_range=(0,1)).fit_transform(score.reshape(-1,1)).ravel()
     score = np.array([score[0]]*math.ceil((slidingWindow-1)/2) + list(score) + [score[-1]]*((slidingWindow-1)//2))
 
-    # Computing RANGE_AUC_ROC and RANGE_AUC_PR
-    grader = metricor()
-    R_AUC_ROC, R_AUC_PR, _, _, _ = grader.RangeAUC(labels=labels, score=score, window=slidingWindow, plot_ROC=True)
+    results = get_range_vus_roc(score, labels, slidingWindow)
 
-    # Computing VUS_ROC and VUS_PR
-    _, _, _, _, _, _,VUS_ROC, VUS_PR = generate_curve(labels, score,2*slidingWindow)
-    print(R_AUC_ROC, R_AUC_PR, VUS_ROC, VUS_PR)
+    for metric in results.keys():
+        print(metric, ':', results[metric])
 
 
 # Data Preprocessing
@@ -141,7 +137,14 @@ labels = dataset[:, 1]
 X_data = Window(window = slidingWindow).convert(data).to_numpy()
 
 if_score = anomaly_results(X_data)
-print('Isolation Forest :')
+print('Isolation Forest')
 scoring(if_score, labels, slidingWindow)
 ```
 
+```
+Isolation Forest
+R_AUC_ROC : 0.9890585796916135
+R_AUC_PR : 0.9461627563358586
+VUS_ROC : 0.972883009260739
+VUS_PR : 0.8923847635934918
+```
