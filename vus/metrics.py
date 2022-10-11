@@ -1,5 +1,5 @@
-from vus.utils.metrics import metricor
-from vus.analysis.robustness_eval import generate_curve
+from .utils.metrics import metricor
+from .analysis.robustness_eval import generate_curve
 
 
 def get_range_vus_roc(score, labels, slidingWindow):
