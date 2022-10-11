@@ -70,7 +70,7 @@ $ python setup.py install
 
 ## Experiments
 
-### Full Accuracy Evalution:
+### Analysis of the Ranks over different Accuracy Measures for all Methods:
 
 |	| AUC_PR|	AUC_ROC|	R_AUC_PR|	R_AUC_ROC|	VUS_PR|	VUS_ROC|Precision@k|	Recall|	Precision|	Rrecall|	Rprecision|	F|	RF|	
 |:--|:---------:|:-------:|:--------:|:-------:|:-----------:|:---:|:----:|:----:|:----:|:-----:|:----:|:----:|:----:|
@@ -95,6 +95,8 @@ $ python setup.py install
 <p align="center">
 <img width="500" height="550" src="https://github.com/bogireddytejareddy/VUS/blob/patch-1/docs/separability_analysis.png"/>
 </p>
+
+### Also see notebooks  in [experiments](https://github.com/bogireddytejareddy/VUS/tree/main/experiments) folder for more analysis on Roubstness, Separability and Entropy.
 
 ## Usage
 
